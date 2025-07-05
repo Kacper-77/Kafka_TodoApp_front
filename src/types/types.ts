@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export interface Todo {
     id: number;
     title: string;
@@ -6,6 +8,8 @@ export interface Todo {
     completed: boolean;
     priority: "LOW" | "MEDIUM" | "HIGH";
 }
+
+export type Priority = "LOW" | "MEDIUM" | "HIGH"
 
 enum role {
     USER,
@@ -20,3 +24,11 @@ export interface User {
     age: number;
     role: role;
 }
+
+export interface ProtectedRouteProps {
+    children: ReactNode
+}
+
+export interface AddTodoFormProps {
+    onAdd: (todo: Todo) => void;
+  }
